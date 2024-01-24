@@ -9,6 +9,7 @@ const AllContact = () => {
 
   const [showModal, setShowModal] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [Reloading, setReLoading] = useState(false);
   const [modalData, setModalData] = useState({});
   const [contacts, setContacts] = useState([]);
   const [searchInput, setSearchInput] = useState("");
@@ -40,7 +41,7 @@ const AllContact = () => {
     }
 
     fetchData();
-  }, []);
+  }, [Reloading]);
 
   const deleteContact = async (id) => {
     if (window.confirm("are you sure you want to delete this contact ?")) {
@@ -82,7 +83,7 @@ const AllContact = () => {
     <>
       <div>
         <h1>Your Contacts</h1>
-        <button onClick={()=>setLoading(true)} className="btn btn-danger my-2">
+        <button onClick={()=>setReLoading(true)} className="btn btn-danger my-2">
           Reload Contact
         </button>
         <hr className="my-4" />
