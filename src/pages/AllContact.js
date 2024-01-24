@@ -82,9 +82,9 @@ const AllContact = () => {
     <>
       <div>
         <h1>Your Contacts</h1>
-        <a href="/mycontacts" className="btn btn-danger my-2">
+        <button onClick={()=>setLoading(true)} className="btn btn-danger my-2">
           Reload Contact
-        </a>
+        </button>
         <hr className="my-4" />
         {loading ? (
           <Spinner splash="Loading Contacts..." />
